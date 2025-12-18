@@ -12,6 +12,8 @@
 <body>
 <%@include file="admin_navbar.jsp" %>
 <h1>Adimain dashboard</h1>
+<h2 class="text-warning"> Welcome
+<span class="text-danger">${auser.fullname }</span></h2>
 
 </body>
 </html>

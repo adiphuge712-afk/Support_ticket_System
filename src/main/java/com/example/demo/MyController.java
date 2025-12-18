@@ -282,7 +282,9 @@ public class MyController {
 			if(session.getAttribute("auser")==null) {
 				return "redirect:/adminlogin";
 			}
-			
+			List<Tickit> t=cs.viewticket();
+			System.out.println("tickit size is: "+t.size());
+			m.addAttribute("tic", t);
 			m.addAttribute("sid",st_id);
 			String s=cs.asign_ticketById(st_id);
 			m.addAttribute("sname",s);

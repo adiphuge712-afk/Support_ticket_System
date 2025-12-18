@@ -16,14 +16,22 @@
 <div class="row">
 <div class="col-sm-4"></div>
 <div class="col-sm-4">
-<h2>update Ticket Status and Remark</h2>
+<h2 class="text-info">Update Ticket Status and Remark</h2>
 <form action="/updatestatus" method="post">
 <input placeholder="Enter name" name="id" type="hidden" class="form-control mb-2" value="${ticdata.ticketId  }">
-<input placeholder="Enter tickit open closed resolved In-progread" name="status" type="text" class="form-control mb-2" value="${ticdata.status }">
+<%-- <input placeholder="Enter tickit open closed resolved In-progread" name="status" type="text" class="form-control mb-2" value="${ticdata.status }"> --%>
+<label for="#select" class="form-label mb-2"><b class="text-danger">Select the status</b></label>
+<select name="status" class="form-control mb-2" id="select">
+    <option value="Open" ${ticdata.status == 'Open' ? 'selected' : ''}>Open</option>
+    <option value="In-Progress" ${ticdata.status == 'In-Progress' ? 'selected' : ''}>In-Progress</option>
+    <option value="Resolved" ${ticdata.status == 'Resolved' ? 'selected' : ''}>Resolved</option>
+    <option value="Closed" ${ticdata.status == 'Closed' ? 'selected' : ''}>Closed</option>
+</select>
+
 <input placeholder="Enter remark optional" name="remark" type="text" class="form-control mb-2" value="${ticdata.remark }">
 <!-- <textarea placeholder="Enter the Address" class="form-control mb-2" name="address"></textarea> -->
 <button type="submit" class="btn btn-success">Update</button>
-<br><a href="/forgotpass" class="mx-2 " >Forgot password</a>
+<br><a href="/forgotpass" class="my-2 " >Forgot password</a>
 </form>
 </div>
 <div class="col-sm-4"></div>

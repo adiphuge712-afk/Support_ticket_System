@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,13 +19,14 @@
 <form action="/assign_ticket_admin" method="post">
 <input placeholder="Enter name" name="st_id" type="hidden" value="${sid }" class="form-control mb-2">
 <input placeholder="Enter name" name="fullname" type="text" value="${sname }" class="form-control mb-2">
- <input placeholder="Enter id" name="ticket_id" type="text" class="form-control mb-2">
- <%-- <label>Select Ticket:</label>
-            <select name="ticket_id" class="form-control mb-3">
-                <c:forEach var="t" items="${tickets}">
-                    <option value="${t.ticketId}">${t.title}</option>
+<!--  <input placeholder="Enter id" name="ticket_id" type="text" class="form-control mb-2"> -->
+
+            <select name="ticket_id" class="form-control mb-2">
+            <option selected>Select the ticket id</option>
+                <c:forEach var="t" items="${tic}">
+                    <option value="${t.ticketId}">${t.ticketname}</option>
                 </c:forEach>
-            </select> --%>
+            </select>
 <button type="submit" class="btn btn-success">Submit</button>
 </form>
 </div>
