@@ -24,7 +24,7 @@
             <select name="ticket_id" class="form-control mb-2">
             <option selected>Select the ticket id</option>
                 <c:forEach var="t" items="${tic}">
-                    <option value="${t.ticketId}">${t.ticketname}</option>
+                    <option value="${t.ticketId}">${t.ticketId} ${t.ticketname}</option>
                 </c:forEach>
             </select>
 <button type="submit" class="btn btn-success">Submit</button>
