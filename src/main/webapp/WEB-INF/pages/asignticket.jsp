@@ -18,7 +18,13 @@
 <h2> Assign Ticket </h2>
 <form action="/assign_ticket_admin" method="post">
 <input placeholder="Enter name" name="st_id" type="hidden" value="${sid }" class="form-control mb-2">
-<input placeholder="Enter name" name="fullname" type="text" value="${sname }" class="form-control mb-2">
+<%-- <input placeholder="Enter name" name="fullname" type="text" value="${sname }" class="form-control mb-2"> --%>
+<select name="fullname" class="form-control mb-2">
+            <option selected>${sname }</option>
+                <c:forEach var="t" items="${st}">
+                    <option value="${t.fullname}">${t.id} ${t.fullname}</option>
+                </c:forEach>
+            </select>
 <!--  <input placeholder="Enter id" name="ticket_id" type="text" class="form-control mb-2"> -->
 
             <select name="ticket_id" class="form-control mb-2">

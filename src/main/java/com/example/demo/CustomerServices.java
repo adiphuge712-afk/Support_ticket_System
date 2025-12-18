@@ -187,7 +187,9 @@ public List<Object> viewtickets(Staff staff,Tickit t) {
 }
 
 
-
+public List<Staff> viewAllStaff(){
+	return stffr.findAll();
+}
 public List<Tickit> viewticketsofstaff(Staff staff,Tickit t) {
 //	Staff s=stffr.findById(staff.getId()).orElseThrow(()->new RuntimeException("Email not found"));
 	List<Tickit> tickets = ticrp.findByStid(staff);

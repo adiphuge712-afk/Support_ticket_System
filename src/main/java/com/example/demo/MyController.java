@@ -283,6 +283,8 @@ public class MyController {
 				return "redirect:/adminlogin";
 			}
 			List<Tickit> t=cs.viewticket();
+			List<Staff>lis= cs.viewAllStaff();
+			m.addAttribute("st", lis);
 			System.out.println("tickit size is: "+t.size());
 			m.addAttribute("tic", t);
 			m.addAttribute("sid",st_id);
